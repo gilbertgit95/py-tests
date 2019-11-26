@@ -1,4 +1,4 @@
-# installation with anaconda
+## installation with anaconda
 
     if the project is new, type:
     ` django-admin startproject pojectname `
@@ -31,3 +31,7 @@
 
     You can now run the project by typing:
     ` python manage.py runserver `
+
+
+## app creation
+    ` python manage.py startapp appName `
