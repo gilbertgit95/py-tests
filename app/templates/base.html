@@ -2,76 +2,28 @@
 {% load static %}
 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My Business Website</title>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" href="{% static "libs/bootstrap/bootstrap.min.css" %}">
-    <link rel="stylesheet" href="{% static "custom/base.css" %}">
+    <head>
+        <meta charset="UTF-8">
+        <title>My Business Website</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="{% static "libs/bootstrap/bootstrap.min.css" %}">
+        <link rel="stylesheet" href="{% static "custom/base.css" %}">
 
-    <script src="{% static "libs/jquery.min.js" %}"></script>
-    <script src="{% static "libs/bootstrap/bootstrap.min.js" %}"></script>
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
-</head>
-<body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">My Business Website</a>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <ul class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Pictures</a></li>
-            <li><a href="#">Summer 15</a></li>
-            <li>Italy</li>
-        </ul>
-
-        <div class="row">
-            <div class="col-md-3">
-                <div class="img-thumbnail max-width product-item">
-                    <img class="max-width"
-                         src="http://robebakery1884.com.au/wp-content/uploads/2016/01/600ml-not-diet.png" alt="product image" />
-                    <div class="prod-name">
-                        product name
-                    </div>
+        <script src="{% static "libs/jquery.min.js" %}"></script>
+        <script src="{% static "libs/bootstrap/bootstrap.min.js" %}"></script>
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">My Business Website</a>
                 </div>
             </div>
+        </nav>
 
-            <div class="col-md-3">
-                <div class="img-thumbnail max-width product-item">
-                    <img class="max-width"
-                         src="http://robebakery1884.com.au/wp-content/uploads/2016/01/600ml-not-diet.png" alt="product image" />
-                    <div class="prod-name">
-                        product name
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="img-thumbnail max-width product-item">
-                    <img class="max-width"
-                         src="http://robebakery1884.com.au/wp-content/uploads/2016/01/600ml-not-diet.png" alt="product image" />
-                    <div class="prod-name">
-                        product name
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="img-thumbnail max-width product-item">
-                    <img class="max-width"
-                         src="http://robebakery1884.com.au/wp-content/uploads/2016/01/600ml-not-diet.png" alt="product image" />
-                    <div class="prod-name">
-                        product name
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
+        {% block content %}
+        {% endblock content %}
+    </body>
 </html>

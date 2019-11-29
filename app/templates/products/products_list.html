@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <ul class="breadcrumb">
+            <li>Home</li>
+        </ul>
+
+        <div class="row">
+            {% for prod in products %}
+                <div class="col-md-3">
+                    <div class="img-thumbnail max-width product-item">
+                        <img class="max-width"
+                                src="{{ prod.product_image }}" alt="product image" />
+                        <a href="/product?id={{ prod.id }}" class="prod-name max-width">
+                            {{ prod.product_name }}
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

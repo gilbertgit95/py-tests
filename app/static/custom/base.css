@@ -1,4 +1,8 @@
-.container .breadcrumb {
+body {
+    font-size: 16pt;
+}
+
+.breadcrumb {
     margin-top: 100px;
 }
 
@@ -12,9 +16,27 @@
     margin-top: 10px;
 }
 
-.product-item .prod-name {
+.product-item img {
+    max-height: 200px;
+}
+
+.product-item a.prod-name {
+    display: inline-block;
     padding: 10px;
     text-align: center;
     color: unset;
-    font-size: 16pt;
+    cursor: pointer;
+}
+
+.product-wrapper .specs .row {
+    margin-top: 20px;
+    color: 
+}
+
+.product-wrapper img {
+    max-height: 515px;
+}
+
+.light-color {
+    color: #5a5ad3;
 }

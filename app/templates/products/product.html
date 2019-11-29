@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container product-wrapper">
+        <ul class="breadcrumb">
+            <li><a href="/">Home</a></li>
+            <li>{{ product.product_name }}</li>
+        </ul>
+
+        <div class="row">
+            <!-- product image section -->
+            <div class="col-md-6">
+                <img class="max-width"
+                    src="{{ product.product_image }}" alt="product image" />
+            </div>
+
+            <!-- information section -->
+            <div class="col-md-6 specs">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div>{{ product.product_desc }}</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="light-color" >Product Name</div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="light-color" >{{ product.product_name }}</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="light-color" >Brand</div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="light-color" >{{ product.product_brand }}</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="light-color" >Price</div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="light-color" >{{ product.product_price }}</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="light-color" >Status</div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="light-color" >{{ product.product_status }}</div>
+                    </div>
+                </div>
+                <!-- buutons -->
+                <div class="row">
+                    <div class="col-xs-6">
+                        <a class="btn btn-default max-width" >Delete</a>
+                    </div>
+                    <div class="col-xs-6">
+                        <a class="btn btn-default max-width" >Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
