@@ -30,7 +30,10 @@ body {
 
 .product-wrapper .specs .row {
     margin-top: 20px;
-    color: 
+}
+
+.product-wrapper .specs-label {
+    text-align: right;
 }
 
 .product-wrapper img {
@@ -39,4 +42,8 @@ body {
 
 .light-color {
     color: #5a5ad3;
+}
+
+.product-wrapper.product-form .specs-label {
+    color: black;
 }
