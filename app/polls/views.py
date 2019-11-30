@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, JsonResponse
+
 import math
+import json
 
 from . import models
 
@@ -45,7 +47,7 @@ def product_form(request):
         # product id means edit form
         if len(product_id):
             template_data['is_new'] = False
-            template_data['product'] = models.Product.objects.filter(id=product_id)[0]
+            template_data['product'] = models.Product.objects.get(id=product_id)
 
         # empty product id means new product
         else:
@@ -63,22 +65,48 @@ def product(request):
     try:
         # use to display the product page
         if (request.method == 'GET'):
-            product = models.Product.objects.filter(id=product_id)[0]
+            product = models.Product.objects.get(id=product_id)
 
             return render(request, 'products/product.html', {'product': product})
 
         # use to add new product
-        elif (request.method == 'post'):
+        elif (request.method == 'POST'):
+            data = json.loads(request.body)
+            # transac = models.Product(
+            #     product_name=data['product_name'],
+            #     product_desc=data['product_desc'],
+            #     product_image=data['product_image'],
+            #     product_brand=data['product_brand'],
+            #     product_price=data['product_price'],
+            #     product_status=data['product_status']
+            # )
+
+            # transac.save()
+
             return JsonResponse({
-                'type': 'post',
-                'id': product_id
+                'type': 'POST',
+                'id': product_id,
+                'data': data['product_name']
             })
 
         # use to edit a particular product
         elif (request.method == 'PATCH'):
+            data = json.loads(request.body)
+            # transac = models.Product.objects.get(id=int(product_id))
+            # transac.update(
+            #     product_name= data['product_name'],
+            #     product_desc= data['product_desc'],
+            #     product_image= data['product_image'],
+            #     product_brand= data['product_brand'],
+            #     product_price= data['product_price'],
+            #     product_status= data['product_status']
+            # )
+            # transac.save()
+
             return JsonResponse({
                 'type': 'PATCH',
-                'id': product_id
+                'id': product_id,
+                'data': data
             })
 
         # use to delete a product

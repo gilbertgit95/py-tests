@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+{% load static %}
 
 {% block content %}
     <div class="container product-wrapper product-form">
@@ -15,7 +17,7 @@
             </ul>
         {% endif %}
 
-        <form action="/product?id=2" method="post" class="row">
+        <div class="row">
             <!-- information section -->
             <div class="col-xs-12 specs">
                 <div class="row">
@@ -79,10 +81,11 @@
                 <!-- buttons -->
                 <div class="row">
                     <div class="col-xs-12">
-                        <button type="submit" class="btn btn-primary max-width" >Save</button>
+                        <button id="product_save_button" type="submit" class="btn btn-primary max-width" >Save</button>
                     </div>
                 </div>
             </div>
-        </form>
+        </div>
+        <script type="text/javascript" src="{% static "custom/product_form.js" %}"></script>
     </div>
 {% endblock content %}
